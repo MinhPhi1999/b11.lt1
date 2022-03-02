@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>game đoán số ng chơi random từ 1 - 10</label> <br>
+<h1 id="result" style="color: red"></h1>
+<button id="btn" onclick="doanSo()">Doan xem</button>
+<h1 id="luotChoi" style="color: blueviolet"></h1>
+<script>
+    let random = Math.floor(Math.random() * 10) + 1;
+    let count = 3
+    console.log('random= ', random)
+
+    function doanSo() {
+        document.getElementById('btn').innerHTML= 'chơi tiếp'
+        let number = +prompt('nhập vào số;')
+        if (number==random){
+            document.getElementById('result').innerHTML=' bạn đoán đúng rồi'
+            document.getElementById('luotChoi').innerHTML='';
+            count = 3;
+            return;
+        }else {
+            count--;
+            if (number<random){
+                document.getElementById('result').innerHTML='<h1 style="color: blue"> số của bạn chọn đang nhỏ hơn</h1>'
+            }else {
+                document.getElementById('result').innerHTML='<h1 style="color: blue"> số của bạn chọn đang lớn hơn</h1>'
+            }
+        }
+        document.getElementById('luotChoi').innerHTML='số lượt chơi: '+count;
+        if (count==0){
+            count=3;
+            document.getElementById('luotChoi').innerHTML='hết lượt chơi';
+            document.getElementById('btn').innerHTML='chơi lại';
+        }
+    }
+</script>
+</body>
+</html>
