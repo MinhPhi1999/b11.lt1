@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // tính tổng 20 số đầu tiên
+    const number = +prompt(' in bao nhiêu số đầu tiên bây giờ?')
+    let  a1 = 0, a2 = 1, convert;
+    for (let  i = 0; i < number; i++) {
+        console.log(a1);
+        convert = a1    + a2;
+        a1  = a2;
+        a2  = convert;
+        document.write(convert + "</br>")
+    }
+
+</script>
+</body>
+</html>
