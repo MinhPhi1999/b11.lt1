@@ -7,16 +7,20 @@
 <body>
 <script>
     //tìm số chia hết cho 5
-    const number = +prompt(' in bao nhiêu số đầu tiên bây giờ?')
-    let  a1 = 0, a2 = 1, convert;
-
-    console.log('Fibonacy:');
-    for (let  i = 0; i <= number; i++) {
-        console.log(a1);
-        convert = a1    + a2;
-        a1  = a2;
-        a2  = convert;
-        document.write(convert + "</br>")
+    let n = +prompt("Bạn muốn hiển thị bao nhiêu số?");
+    let a, b, result;
+    a = 0;
+    b = 1;
+    result = '';
+    for (let i=1; i <= n; i++) {
+        document.write(result+"<br/>");
+        result = a + b;
+        a = b;
+        b = result;
+        if (a%5==0){
+            alert('số đầu tiên trong dãy fibonaci chia hết cho 5 là: '+a)
+            break;
+        }
     }
 </script>
 </body>

@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Hiển thị n số đầu tiên trong dãy Fibonacci</title>
 </head>
 <body>
-
+<script>
+    let n = +prompt("Bạn muốn hiển thị bao nhiêu số?");
+    let a, b, result;
+    a = 0;
+    b = 1;
+    result = '';
+    document.write(b)
+    for (let i=1; i < n; i++) {
+        document.write(result+"<br/>");
+        result = a + b;
+        a = b;
+        b = result;
+    }
+</script>
 </body>
 </html>
